@@ -4,4 +4,8 @@ class UsersController < ApplicationController
     erb :'users/new'
   end
 
+  post '/users' do
+    # raise params.inspect
+  end 
+
 end 
