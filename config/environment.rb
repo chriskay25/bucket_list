@@ -9,4 +9,9 @@ configure :development do
   BetterErrors.application_root = File.expand_path('..', __FILE__)
 end 
 
+if ENV['SINATRA_ENV'] == 'development'
+  require_relative '../secrets.rb'
+end 
+require_relative '../constants.rb'
+
 require_all 'app'
