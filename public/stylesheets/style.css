@@ -28,6 +28,12 @@ body, html {
   color: red;
 }
 
+#simple_link {
+  all: initial;
+  color: blue;
+  text-decoration: underline;
+}
+
 a:link, a:visited {
   background-color: #FF7276;
   color: black;
