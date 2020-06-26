@@ -24,8 +24,11 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect "/users/#{user.id}"
     else
-      redirect '/'
+      @failed = true
+      erb :login
     end 
   end 
+
+  
 
 end 
