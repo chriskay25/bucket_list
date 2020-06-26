@@ -5,8 +5,12 @@ class UsersController < ApplicationController
   end
 
   get '/users/:id' do
-    @user = User.find(params[:id])
-    erb :'users/show'
+    if current_user.id == params[:id].to_i
+      @user = User.find(params[:id])
+      erb :'users/show'
+    else
+      redirect '/'
+    end 
   end 
 
 end 
