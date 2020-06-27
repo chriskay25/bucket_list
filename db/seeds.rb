@@ -1,5 +1,12 @@
-User.create(username: "Todd", password: "Gaston")
 User.create(username: "Doctor", password: "Phil")
 User.create(username: "Chuck", password: "Norris")
 User.create(username: "Philip", password: "Roth")
 User.create(username: "Tinker", password: "Tailor")
+User.create(username: "Chris", password: "Kay")
+
+Bucket.create(event: "Skydiving", user_id: 2)
+Bucket.create(event: "Scuba diving", user_id: 2)
+Bucket.create(event: "Fight Bruce Lee", user_id: 2)
+Bucket.create(event: "Become an icon", user_id: 2)
+Bucket.create(event: "Graduate from Flatiron", user_id: 5)
+Bucket.create(event: "Spit on Trump", user_id: 5)
