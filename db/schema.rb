@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 2020_06_28_065105) do
   end
 
   create_table "destinations", force: :cascade do |t|
-    t.string "name"
     t.string "country"
     t.string "city"
     t.boolean "complete", default: false
