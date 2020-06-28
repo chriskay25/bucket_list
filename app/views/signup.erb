@@ -1,5 +1,15 @@
 <h1>Sign Up</h1>
 
+<% if @errors %>
+  <div id="error_explanation">
+      <ul>
+        <% @errors.each do |attr, message| %>
+          <li><%= "#{attr} #{message}" %></li>
+        <% end %>
+      </ul>
+  </div>
+<% end %>
+
 <form action="/signup" method="post">
   <label for="username">Username: </label>
   <input type="text" name="username" id="username"><br>
