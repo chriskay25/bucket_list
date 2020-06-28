@@ -10,21 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_28_002113) do
+ActiveRecord::Schema.define(version: 2020_06_28_065105) do
 
   create_table "buckets", force: :cascade do |t|
-    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "events_id"
-    t.index ["events_id"], name: "index_buckets_on_events_id"
+    t.integer "user_id"
     t.index ["user_id"], name: "index_buckets_on_user_id"
+  end
+
+  create_table "buckets_destinations", id: false, force: :cascade do |t|
+    t.integer "bucket_id", null: false
+    t.integer "destination_id", null: false
+    t.index ["bucket_id"], name: "index_buckets_destinations_on_bucket_id"
+    t.index ["destination_id"], name: "index_buckets_destinations_on_destination_id"
+  end
+
+  create_table "buckets_events", id: false, force: :cascade do |t|
+    t.integer "bucket_id", null: false
+    t.integer "event_id", null: false
+    t.index ["bucket_id"], name: "index_buckets_events_on_bucket_id"
+    t.index ["event_id"], name: "index_buckets_events_on_event_id"
+  end
+
+  create_table "destinations", force: :cascade do |t|
+    t.string "name"
+    t.string "country"
+    t.string "city"
+    t.boolean "complete", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.boolean "complete", default: false
-    t.text "note"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

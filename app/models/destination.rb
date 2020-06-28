@@ -1,3 +1,3 @@
-class Event < ActiveRecord::Base
+class Destination < ActiveRecord::Base
   has_and_belongs_to_many :buckets
 end 

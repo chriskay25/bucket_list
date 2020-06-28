@@ -3,8 +3,7 @@ class CreateEvents < ActiveRecord::Migration[6.0]
     create_table :events do |t|
       t.string :name
       t.boolean :complete, :default => false
-      t.text :note
-      
+
       t.timestamps
     end
   end
