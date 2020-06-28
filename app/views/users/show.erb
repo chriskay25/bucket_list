@@ -1,15 +1,5 @@
 <h1><%= current_user.username %>'s Profile</h1>
 
-<% if current_user.buckets.empty? %>
-  <p>Nothing in your list yet. Click <a id="simple_link" href=/buckets/new>here</a> to get started</p>
-<% else %>
-  <% current_user.buckets.each do |bucket| %>
-    <p>
-      <%= bucket.event %>
-    </p>
-  <% end %>
-<% end %>
-
 
 <a href="/">Home</a>
 <a href="/logout">Log Out</a>
