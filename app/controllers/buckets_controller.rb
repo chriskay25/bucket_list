@@ -5,9 +5,8 @@ class BucketsController < ApplicationController
     erb :'buckets/new'
   end 
 
-  post '/buckets' do
-    event = Event.create(event: params[:event], note: params[:note])
-    redirect "/users/current_user.id"
+  get '/buckets/:id' do
+    erb :'buckets/show'
   end 
 
 end 
