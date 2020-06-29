@@ -1,0 +1,10 @@
+<h1>Destination Index</h1>
+
+<% @destinations.each do |dest| %>
+  <p>
+    City: <%= dest.city %> 
+    Country: <%= dest.country %>
+  </p>
+<% end %>
+
+<a href="/destinations/new">New Destination</a>

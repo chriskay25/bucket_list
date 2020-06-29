@@ -1,0 +1,13 @@
+<h1>Edit Destination</h2>
+
+<form action="/destinations/<%= @dest.id %>" method="post">
+  <input type="hidden" id="hidden" name="_method" value="patch">
+
+  <label for="city">City: </label>
+  <input type="text" name="city" id="city" value="<%= @dest.city %>"><br>
+
+  <label for="country">Country: </label>
+  <input type="text" name="country" id="country" value="<%= @dest.country%>"><br>
+
+  <input type="submit">
+</form>

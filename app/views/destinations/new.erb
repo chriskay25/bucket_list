@@ -1,0 +1,21 @@
+<h1>New Destination</h1>
+
+<% if @errors %>
+  <div class="danger">
+      <ul>
+        <% @errors.each do |attr, message| %>
+          <li><%= "#{attr.capitalize} #{message[0]}" %></li>
+        <% end %>
+      </ul>
+  </div>
+<% end %>
+
+<form action="/destinations" method="post">
+  <label for="city">City: </label>
+  <input type="text" name="city" id="city" placeholder="city"><br>
+
+  <label for="country">Country: </label>
+  <input type="text" name="country" id="country" placeholder="country"><br>
+
+  <input type="submit">
+</form>
