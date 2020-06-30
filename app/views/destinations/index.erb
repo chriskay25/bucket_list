@@ -1,10 +1,11 @@
 <h1>Destination Index</h1>
 
 <% @destinations.each do |dest| %>
-  <p>
-    City: <%= dest.city %> 
-    Country: <%= dest.country %>
-  </p>
+  <li>
+    <a href="/destinations/<%= dest.id %>">
+      <%= dest.city.upcase %>, <%= dest.country.upcase %>
+    </a>
+  </li>
 <% end %>
-
+<br>
 <a href="/destinations/new">New Destination</a>

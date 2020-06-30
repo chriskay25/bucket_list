@@ -10,8 +10,11 @@ class UsersController < ApplicationController
   end 
 
   get '/users/:id/edit' do
+    auth
     if current_user.id == params[:id].to_i
       erb :'/users/edit'
+    else
+      redirect '/'
     end 
   end 
 
