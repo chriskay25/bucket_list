@@ -1,22 +1,26 @@
-<h1>Sign Up</h1>
+<div class="w3-container">  
+  <h1 class="w3-panel">Sign Up</h1>
 
-<% if @errors %>
-  <div class="danger">
-      <ul>
-        <% @errors.each do |attr, message| %>
-          <li><%= "#{attr.capitalize} #{message[0]}" %></li>
-        <% end %>
-      </ul>
-  </div>
-<% end %>
-
-<form action="/signup" method="post">
-  <label for="username">Username: </label>
-  <input type="text" name="username" id="username" placeholder="username"><br>
-  <label for="password">Password: </label>
-  <input type="password" name="password" id="password" placeholder="password"><br>
-  <label for="password_confirmation">Confirm Password: </label>
-  <input type="password_confirmation" name="password_confirmation" placeholder="password"><br><br>
-
-  <input type="submit">
-</form>
+  <% if @errors %>
+    <div class="w3-panel">
+        <ul>
+          <% @errors.each do |attr, message| %>
+            <li><%= "#{attr.capitalize} #{message[0]}" %></li>
+          <% end %>
+        </ul>
+    </div>
+  <% end %>
+  
+  <form class="w3-container w3-sand w3-card-2" action="/signup" method="post">
+    <p class="w3-panel">Choose a username and password. Note: username must be unique.</p>
+    <label for="username">Username: </label>
+    <input class="w3-input w3-border" type="text" name="username" id="username" placeholder="username"><br>
+    <label for="password">Password: </label>
+    <input class="w3-input w3-border" type="password" name="password" id="password" placeholder="password"><br>
+    <label for="password_confirmation">Confirm Password: </label>
+    <input class="w3-input w3-border" type="password_confirmation" name="password_confirmation" placeholder="password"><br><br>
+  
+    <input type="submit">
+    <button class="w3-btn">Test</button>
+  </form>
+</div>
