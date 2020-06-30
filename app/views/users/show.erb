@@ -1,6 +1,17 @@
 <h1><%= current_user.username %>'s Profile</h1>
 
-<a href="/destinations">Destinations</a>
+<% if current_user.destinations.empty? %>
+  <p>Your bucket is empty. <a href="/destinations/new">Fill It</a></p>
+<% else %>
+  <p>You have <%= current_user.destinations.length %> destination(s):</p>
+  <ul>
+  <% current_user.destinations.each do |dest| %>
+    <li><%= "#{dest.city.upcase}, #{dest.country.upcase}" %></li>
+  <% end %>
+  </ul>
+  <a href="/destinations/new">New Destination</a>
+<% end %>
+
 <a href="/users/<%= current_user.id %>/edit">Edit User</a>
 <a href="/users/<%= current_user.id %>/delete">Delete User</a>
 <a href="/logout">Log Out</a>

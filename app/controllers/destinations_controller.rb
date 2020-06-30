@@ -1,17 +1,20 @@
 class DestinationsController < ApplicationController
 
   get '/destinations/new' do
+    auth
     erb :'/destinations/new'
   end 
 
   get '/destinations' do
-    @destinations = Destination.all
+    auth
+    @destinations = current_user.destinations.all if !current_user.destinations.empty?
     erb :'/destinations/index'
   end 
 
   post '/destinations' do
     dest = Destination.new(city: params[:city], country: params[:country])
-    if dest.save
+    if dest.valid?
+      current_user.destinations << dest
       redirect "/destinations/#{dest.id}"
     else
       @errors = dest.errors.messages
@@ -20,20 +23,21 @@ class DestinationsController < ApplicationController
   end 
 
   get '/destinations/:id' do
+    auth
     @dest = Destination.find(params[:id])
     erb :'/destinations/show'
   end 
 
-  post '/destinations/:id' do
+  patch '/destinations/:id' do
     @dest = Destination.find(params[:id])
     @dest.update(city: params[:city], country: params[:country])
     redirect "/destinations/#{@dest.id}"
   end 
 
   get '/destinations/:id/edit' do
+    auth
     @dest = Destination.find(params[:id])
     erb :'/destinations/edit'
   end 
   
-
 end 
