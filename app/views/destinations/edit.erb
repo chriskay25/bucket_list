@@ -1,7 +1,8 @@
 <h1>Edit Destination</h2>
 
+<h5>Please fill out both fields to edit destination.</h5>
 <form action="/destinations/<%= @dest.id %>" method="post">
-  <input type="hidden" id="hidden" name="_method" value="patch">
+  <input type="hidden" id="hidden" name="_method" value="PATCH">
 
   <label for="city">City: </label>
   <input type="text" name="city" id="city" value="<%= @dest.city %>"><br>
@@ -11,3 +12,15 @@
 
   <input type="submit">
 </form>
+
+<br>
+
+<h5>Would you like to delete this destination?</h5>
+<form action="/destinations/<%= @dest.id %>" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Destination?">
+</form>
+
+<br>
+<a href="/users/<% current_user.id %>">User Profile</a>
+<a href="/destinations">Your Destinations</a>

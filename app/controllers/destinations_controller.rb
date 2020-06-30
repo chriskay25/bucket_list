@@ -15,7 +15,7 @@ class DestinationsController < ApplicationController
     dest = Destination.new(city: params[:city], country: params[:country])
     if dest.valid?
       current_user.destinations << dest
-      redirect "/destinations/#{dest.id}"
+      redirect "/users/#{current_user.id}"
     else
       @errors = dest.errors.messages
       erb :'/destinations/new'
@@ -39,5 +39,11 @@ class DestinationsController < ApplicationController
     @dest = Destination.find(params[:id])
     erb :'/destinations/edit'
   end 
+
+  delete '/destinations/:id' do
+    dest = Destination.find(params[:id])
+    dest.delete
+    redirect "/destinations"
+  end
   
 end 
