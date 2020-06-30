@@ -1,5 +1,6 @@
 <h1><%= current_user.username %>'s Profile</h1>
 
-
-<a href="/">Home</a>
+<a href="/destinations">Destinations</a>
+<a href="/users/<%= current_user.id %>/edit">Edit User</a>
+<a href="/users/<%= current_user.id %>/delete">Delete User</a>
 <a href="/logout">Log Out</a>
