@@ -3,13 +3,7 @@
 <% if current_user.destinations.empty? %>
   <p>Your bucket is empty. <a href="/destinations/new">Fill It</a></p>
 <% else %>
-  <p>You have <%= current_user.destinations.length %> destination(s):</p>
-  <ul>
-  <% current_user.destinations.each do |dest| %>
-    <li><%= "#{dest.city.upcase}, #{dest.country.upcase}" %></li>
-  <% end %>
-  </ul>
-  <a href="/destinations/new">New Destination</a>
+  <p>You have <%= current_user.destinations.length %> destination(s): <a href="/destinations">View</a></p>
 <% end %>
 
 <a href="/users/<%= current_user.id %>/edit">Edit User</a>

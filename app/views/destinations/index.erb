@@ -5,7 +5,10 @@
     <a href="/destinations/<%= dest.id %>">
       <%= dest.city.upcase %>, <%= dest.country.upcase %>
     </a>
+    <a href="/destinations/<%= dest.id %>/edit"> - Edit or Delete</a>
   </li>
 <% end %>
 <br>
+<a href="/users/<%= current_user.id %>">User Profile</a>
 <a href="/destinations/new">New Destination</a>
+<a href="/logout">Log Out</a>
