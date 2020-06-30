@@ -1,0 +1,7 @@
+<h1>Delete User</h1>
+
+<form action="/users/<%= current_user.id %>" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+
+  <input type="submit" value="Delete User?">
+</form>

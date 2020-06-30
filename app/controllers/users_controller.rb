@@ -1,13 +1,9 @@
 class UsersController < ApplicationController
 
-  get '/users/new' do 
-    erb :'users/new'
-  end
-
   get '/users/:id' do
+    auth
     if current_user.id == params[:id].to_i
-      @user = User.find(params[:id])
-      erb :'users/show'
+      erb :'/users/show'
     else
       redirect '/'
     end 
@@ -23,13 +19,17 @@ class UsersController < ApplicationController
     auth
     user = User.find(params[:id])
     user.update(username: params[:username], password: params[:password])
+    redirect "/users/#{user.id}"
   end 
 
-  delete '/users/:id/delete' do
+  get '/users/:id/delete' do
     auth
+    erb :'/users/delete'
+  end 
+
+  delete '/users/:id' do
     user = User.find(params[:id])
-    user.delete
+    session.clear && user.delete
     redirect '/'
   end 
-
 end 
