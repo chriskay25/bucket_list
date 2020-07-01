@@ -1,7 +1,7 @@
-<h1>Delete User</h1>
+<h1 class="w3-container">Delete User</h1>
 
-<form action="/users/<%= current_user.id %>" method="post">
+<form class="w3-container" action="/users/<%= current_user.id %>" method="post">
   <input type="hidden" name="_method" value="DELETE">
 
-  <input type="submit" value="Delete User?">
+  <input type="submit" class="w3-btn w3-black" value="Delete User?">
 </form>

@@ -1,26 +1,27 @@
-<h1>Edit Destination</h2>
+<h1 class="w3-container">Edit Destination</h2>
 
 <h5>Please fill out both fields to edit destination.</h5>
-<form action="/destinations/<%= @dest.id %>" method="post">
+<form class="w3-container" action="/destinations/<%= @dest.id %>" method="post">
   <input type="hidden" id="hidden" name="_method" value="PATCH">
 
   <label for="city">City: </label>
-  <input type="text" name="city" id="city" value="<%= @dest.city %>"><br>
+  <input class="w3-input w3-border" style="width:40%" type="text" name="city" id="city" value="<%= @dest.city %>">
 
   <label for="country">Country: </label>
-  <input type="text" name="country" id="country" value="<%= @dest.country%>"><br>
+  <input class="w3-input w3-border" style="width:40%" type="text" name="country" id="country" value="<%= @dest.country%>"><br>
 
-  <input type="submit">
+  <input type="submit" class="w3-btn w3-black" value="Edit Destination">
 </form>
 
 <br>
 
 <h5>Would you like to delete this destination?</h5>
-<form action="/destinations/<%= @dest.id %>" method="post">
+<form class="w3-container" action="/destinations/<%= @dest.id %>" method="post">
   <input type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="Delete Destination?">
+  <input type="submit" class="w3-btn w3-black" value="Delete Destination?">
 </form>
 
-<br>
-<a href="/users/<% current_user.id %>">User Profile</a>
-<a href="/destinations">Your Destinations</a>
+<br><br>
+<a href="/users/<%= current_user.id %>" class="w3-btn w3-black">User Profile</a>
+<a href="/destinations" class="w3-btn w3-black">Destinations</a>
+<a href="/logout" class="w3-btn w3-red">Log Out</a>

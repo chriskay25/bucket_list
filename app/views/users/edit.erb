@@ -1,22 +1,22 @@
-<h2>Edit <%= current_user.username %>'s Profile
+<h2 class="w3-container">Edit <%= current_user.username %>'s Profile
 
-<h4>Please fill out the following fields.</h4>
+<h5 class="w3-container">Please fill out the following fields.</h5>
 
-
-<form action="/users/<%= current_user.id %>" method="post">
+<form class="w3-container" action="/users/<%= current_user.id %>" method="post">
   <input type="hidden" id="hidden" name="_method" value="patch">
 
   <label>Username: </label>
-  <input type="text" name="username" value="<%= current_user.username %>"><br>
+  <input class="w3-input w3-border" style="width:40%" type="text" name="username" value="<%= current_user.username %>"><br>
 
   <label>Password: </label>
-  <input type="password" name="password" placeholder="New Password"><br>
+  <input class="w3-input w3-border" style="width:40%" type="password" name="password" placeholder="New Password"><br>
 
   <label>Confirm Password: </label>
-  <input type="password_confirmation" name="password_confirmation" placeholder="Password Confirmation"><br><br>
+  <input class="w3-input w3-border" style="width:40%" type="password_confirmation" name="password_confirmation" placeholder="Password Confirmation"><br>
 
-  <input type="submit">
+  <input type="submit" class="w3-btn w3-black" value="Edit User">
 </form>
 
 <br>
-<a href="/logout">Log Out</a>
+<a href="/users/<%= current_user.id %>" class="w3-btn w3-black">User Profile</a>
+<a href="/logout" class="w3-btn w3-red">Log Out</a>

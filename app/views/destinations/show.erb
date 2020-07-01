@@ -1,11 +1,13 @@
-<h1>Destination</h1>
+<h1 class="w3-container">Destination</h1>
 
-<h3>City: <%= @dest.city.upcase  %></h3>
-<h3>Country: <%= @dest.country.upcase  %></h3>
+<div class="w3-container">
+  <h3>City: <%= @dest.city.upcase  %></h3>
+  <h3>Country: <%= @dest.country.upcase  %></h3>
+</div>
 
-<a href="/users/<%= current_user.id %>">User Profile</a>
-<a href="/destinations">User Destinations</a>
-<a href="/logout">Log Out</a>
+<a href="/users/<%= current_user.id %>" class="w3-btn w3-black">User Profile</a>
+<a href="/destinations" class="w3-btn w3-black">Destinations</a>
+<a href="/logout" class="w3-btn w3-red">Log Out</a>
 
 
 

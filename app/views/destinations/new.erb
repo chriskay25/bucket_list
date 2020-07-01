@@ -1,4 +1,4 @@
-<h1>New Destination</h1>
+<h1 class="w3-container">New Destination</h1>
 
 <% if @errors %>
   <div class="danger">
@@ -10,12 +10,17 @@
   </div>
 <% end %>
 
-<form action="/destinations" method="post">
+<form class="w3-container" action="/destinations" method="post">
   <label for="city">City: </label>
-  <input type="text" name="city" id="city" placeholder="city"><br>
+  <input class="w3-input w3-border" style="width:40%" type="text" name="city" id="city" placeholder="city">
 
   <label for="country">Country: </label>
-  <input type="text" name="country" id="country" placeholder="country"><br>
+  <input class="w3-input w3-border" style="width:40%" type="text" name="country" id="country" placeholder="country"><br>
 
-  <input type="submit">
+  <input type="submit" class="w3-btn w3-black" value="Create Destination">
 </form>
+
+<br>
+<a href="/users/<%= current_user.id %>" class="w3-btn w3-black">User Profile</a>
+<a href="/destinations" class="w3-btn w3-black">Destinations</a>
+<a href="/logout" class="w3-btn w3-red">Log Out</a>
