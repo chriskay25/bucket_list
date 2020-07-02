@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   get '/signup' do
+    redirect "/users/#{current_user.id}" if logged_in?
     erb :signup
   end 
 
@@ -16,6 +17,7 @@ class SessionsController < ApplicationController
   end 
 
   get '/login' do
+    redirect "/users/#{current_user.id}" if logged_in?
     erb :login
   end 
 
