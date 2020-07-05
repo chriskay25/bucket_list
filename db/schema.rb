@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_29_174524) do
+ActiveRecord::Schema.define(version: 2020_07_05_012449) do
 
   create_table "destinations", force: :cascade do |t|
     t.string "country"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 2020_06_29_174524) do
     t.index ["user_id"], name: "index_destinations_on_user_id"
   end
 
+  create_table "experiences", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_experiences_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
@@ -29,4 +37,5 @@ ActiveRecord::Schema.define(version: 2020_06_29_174524) do
   end
 
   add_foreign_key "destinations", "users"
+  add_foreign_key "experiences", "users"
 end
