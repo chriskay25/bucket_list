@@ -1,9 +1,13 @@
 <h1><%= current_user.username %>'s Profile</h1>
 
-<% if current_user.destinations.empty? %>
-  <p>Your bucket is empty. <a href="/destinations/new">Fill It</a></p>
+<% if current_user.destinations.empty? && current_user.experiences.empty? %>
+  <p>Your bucket is empty. 
+    <a href="/destinations/new">Add a destination</a>
+    <a href="/experiences/new">Add an experience</a>
+  </p>
 <% else %>
-  <p>You have <%= current_user.destinations.length %> destination(s): <a href="/destinations">View</a></p>
+  <p>You have <%= current_user.dest_total %> destination(s): <a href="/destinations">View</a></p>
+  <p>You have <%= current_user.exp_total %> experience(s): <a href="/experiences">View</a></p>
 <% end %>
 
 <a href="/users/<%= current_user.id %>/edit">Edit User</a>
