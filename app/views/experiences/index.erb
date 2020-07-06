@@ -1,0 +1,14 @@
+<h1>Experiences Index</h1>
+
+<% @experiences.each do |exp| %>
+  <li>
+    <a href="/experiences/<%= exp.id %>">
+      <%= exp.name.upcase %>
+    </a>
+    <a href="/experiences/<%= exp.id %>/edit"> - Edit or Delete</a>
+  </li>
+<% end %>
+<br>
+<a href="/users/<%= current_user.id %>">User Profile</a>
+<a href="/experiences/new">New Experience</a>
+<a href="/logout">Log Out</a>
