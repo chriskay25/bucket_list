@@ -28,4 +28,23 @@ class ExperiencesController < ApplicationController
     erb :'/experiences/show'
   end 
 
+  patch '/experiences/:id' do
+    @exp = Experience.find(params[:id])
+    @exp.update(name: params[:name])
+    redirect "/experiences/#{@exp.id}"
+  end 
+
+  get '/experiences/:id/edit' do
+    auth
+    @exp = Experience.find(params[:id])
+    erb :'/experiences/edit'
+  end 
+
+  delete '/experiences/:id' do
+    exp = Experience.find(params[:id])
+    exp.delete
+    redirect "/experiences"
+  end
+  
+
 end 
