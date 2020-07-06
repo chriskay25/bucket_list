@@ -1,15 +1,17 @@
-<h1><%= current_user.username %>'s Profile</h1>
-
 <% if current_user.destinations.empty? && current_user.experiences.empty? %>
-  <p>Your bucket is empty. What would you like to do?
-    <a href="/destinations/new">Add a destination</a>
-    <a href="/experiences/new">Add an experience</a>
-  </p>
+  <h2>Hello <%= current_user.username %>! Your bucket is currently empty. What would you like to do?</h2>
+    <p><a href="/destinations/new">Add a destination</a></p>
+    <p><a href="/experiences/new">Add an experience</a></p>
 <% else %>
-  <p>You have <%= current_user.dest_total %> destination(s): <a href="/destinations">View</a> <a href="/destinations/new">Add a destination</a></p>
-  <p>You have <%= current_user.exp_total %> experience(s): <a href="/experiences">View</a> <a href="/experiences/new">Add an experience</a></p> 
+  <h2><%= current_user.username %>'s Bucket List</h2>
+  <p><%= current_user.dest_count %> DESTINATION(S):</p>
+  <p><a href="/destinations">View</a> <a href="/destinations/new">Add a destination</a></p>
+  <p><%= current_user.exp_count %> EXPERIENCE(S):</p> 
+  <p><a href="/experiences">View</a> <a href="/experiences/new">Add an experience</a></p> 
 <% end %>
 
-<a href="/users/<%= current_user.id %>/edit">Edit User</a>
-<a href="/users/<%= current_user.id %>/delete">Delete User</a>
-<a href="/logout">Log Out</a>
+<div>
+  <a href="/users/<%= current_user.id %>/edit">Edit User</a>
+  <a href="/users/<%= current_user.id %>/delete">Delete User</a>
+  <a href="/logout">Log Out</a>
+</div>
