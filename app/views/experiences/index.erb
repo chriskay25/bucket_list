@@ -2,13 +2,13 @@
 
 <% @experiences.each do |exp| %>
   <li>
-    <a href="/experiences/<%= exp.id %>">
+    <a href="/experiences/<%= exp.id %>" class="list">
       <%= exp.name.upcase %>
-    </a>
-    <a href="/experiences/<%= exp.id %>/edit"> - Edit or Delete</a>
+    </a> - 
+    <a href="/experiences/<%= exp.id %>/edit" class="normal">Edit or Delete</a>
   </li>
 <% end %>
 <br>
-<a href="/users/<%= current_user.id %>">User Profile</a>
-<a href="/experiences/new">New Experience</a>
-<a href="/logout">Log Out</a>
+<a href="/users/<%= current_user.id %>" class="footer">User Profile</a>
+<a href="/experiences/new" class="footer">New Experience</a>
+<a href="/logout" class="footer">Log Out</a>

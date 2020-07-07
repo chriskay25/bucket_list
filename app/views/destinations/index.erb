@@ -2,13 +2,13 @@
 
 <% @destinations.each do |dest| %>
   <li>
-    <a href="/destinations/<%= dest.id %>">
+    <a href="/destinations/<%= dest.id %>" class="list">
       <%= dest.city.upcase %>, <%= dest.country.upcase %>
-    </a>
-    <a href="/destinations/<%= dest.id %>/edit"> - Edit or Delete</a>
+    </a> - 
+    <a href="/destinations/<%= dest.id %>/edit" class="normal">Edit or Delete</a>
   </li>
 <% end %>
 <br>
-<a href="/users/<%= current_user.id %>">User Profile</a>
-<a href="/destinations/new">New Destination</a>
-<a href="/logout">Log Out</a>
+<a href="/users/<%= current_user.id %>" class="footer">User Profile</a>
+<a href="/destinations/new" class="footer">New Destination</a>
+<a href="/logout" class="footer">Log Out</a>
