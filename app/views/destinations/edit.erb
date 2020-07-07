@@ -10,7 +10,7 @@
   <label for="country">Country: </label>
   <input type="text" name="country" id="country" value="<%= @dest.country%>"><br>
 
-  <input type="submit">
+  <input type="submit" value="Edit Destination">
 </form>
 
 <br>
@@ -22,5 +22,6 @@
 </form>
 
 <br>
-<a href="/users/<% current_user.id %>">User Profile</a>
-<a href="/destinations">Your Destinations</a>
+<a href="/users/<% current_user.id %>" class="footer">User Profile</a>
+<a href="/destinations" class="footer">User Destinations</a>
+<a href="/logout" class="footer">Log Out</a>

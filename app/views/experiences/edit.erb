@@ -5,7 +5,7 @@
   <input type="hidden" id="hidden" name="_method" value="PATCH">
 
   <label for="name">Name: </label>
-  <input type="text" name="name" id="name" value="<%= @exp.name %>"><br>
+  <input type="text" name="name" id="name" value="<%= @exp.name %>"><br><br>
 
   <input type="submit" value="Edit Experience">
 </form>
@@ -15,9 +15,11 @@
 <h5>Would you like to delete this experience?</h5>
 <form action="/experiences/<%= @exp.id %>" method="post">
   <input type="hidden" name="_method" value="DELETE">
+  
   <input type="submit" value="Delete Experience?">
 </form>
 
 <br>
-<a href="/users/<% current_user.id %>">User Profile</a>
-<a href="/experiences">Your Experiences</a>
+<a href="/users/<% current_user.id %>" class="footer">User Profile</a>
+<a href="/experiences" class="footer">User Experiences</a>
+<a href="/logout" class="footer">Log Out</a>
