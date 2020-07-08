@@ -7,15 +7,16 @@ class ExperiencesController < ApplicationController
 
   get '/experiences' do
     auth
-    @experiences = current_user.experiences.all if !current_user.experiences.empty?
+    @experiences = @user.experiences.all
     erb :'/experiences/index'
   end 
 
   post '/experiences' do
+    @user = current_user
     exp = Experience.new(name: params[:name])
     if exp.valid?
-      current_user.experiences << exp
-      redirect "/users/#{current_user.id}"
+      @user.experiences << exp
+      redirect "/users/#{@user.id}"
     else
       @errors = exp.errors.messages
       erb :'/experiences/new'
@@ -25,7 +26,11 @@ class ExperiencesController < ApplicationController
   get '/experiences/:id' do
     auth
     @exp = Experience.find(params[:id])
-    erb :'/experiences/show'
+    if @user.experiences.include?(@exp)
+      erb :'/experiences/show'
+    else
+      redirect "/users/#{@user.id}"
+    end 
   end 
 
   patch '/experiences/:id' do
@@ -37,7 +42,11 @@ class ExperiencesController < ApplicationController
   get '/experiences/:id/edit' do
     auth
     @exp = Experience.find(params[:id])
-    erb :'/experiences/edit'
+    if @user.experiences.include?(@exp)
+      erb :'/experiences/edit'
+    else
+      redirect "users/#{@user.id}"
+    end 
   end 
 
   delete '/experiences/:id' do
