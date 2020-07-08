@@ -26,7 +26,11 @@ class UsersController < ApplicationController
 
   get '/users/:id/delete' do
     auth
-    erb :'/users/delete'
+    if @user.id == params[:id].to_i
+      erb :'/users/delete'
+    else
+      redirect "/users/#{@user.id}"
+    end 
   end 
 
   delete '/users/:id' do
