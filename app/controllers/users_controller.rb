@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   get '/users/:id' do
     auth
-    if current_user.id == params[:id].to_i
+    if @user.id == params[:id].to_i
       erb :'/users/show'
     else
       redirect '/'
@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   get '/users/:id/edit' do
     auth
-    if current_user.id == params[:id].to_i
+    if @user.id == params[:id].to_i
       erb :'/users/edit'
     else
       redirect '/'
@@ -19,7 +19,6 @@ class UsersController < ApplicationController
   end 
 
   patch '/users/:id' do
-    auth
     user = User.find(params[:id])
     user.update(username: params[:username], password: params[:password])
     redirect "/users/#{user.id}"
