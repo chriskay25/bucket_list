@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
   delete '/users/:id' do
     user = User.find(params[:id])
-    session.clear && user.delete
+    session.clear && user.destroy
     redirect '/'
   end 
 end 
