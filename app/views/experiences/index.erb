@@ -1,14 +1,20 @@
 <h1>Experiences Index</h1>
 
-<% @experiences.each do |exp| %>
-  <li>
-    <a href="/experiences/<%= exp.id %>" class="list">
-      <%= exp.name.upcase %>
-    </a> - 
-    <a href="/experiences/<%= exp.id %>/edit" class="normal">Edit or Delete</a>
-  </li>
+<% if !@experiences.empty? %>
+  <% @experiences.each do |exp| %>
+    <li>
+      <a href="/experiences/<%= exp.id %>" class="list">
+        <%= exp.name.upcase %>
+      </a> - 
+      <a href="/experiences/<%= exp.id %>/edit" class="normal">Edit or Delete</a>
+    </li>
+  <% end %>
+<% else %>
+  <p>You haven't added any experiences yet. If you would like to, please click on the "New Experience" link below.</p>
 <% end %>
+
 <br>
+
 <a href="/users/<%= current_user.id %>" class="footer">User Profile</a>
 <a href="/experiences/new" class="footer">New Experience</a>
 <a href="/logout" class="footer">Log Out</a>
