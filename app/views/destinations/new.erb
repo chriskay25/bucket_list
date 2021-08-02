@@ -1,26 +1,28 @@
-<h1>New Destination</h1>
+<div class="logged-in">
+    <h1>New Destination</h1>
 
-<% if @errors %>
-  <div class="danger">
-      <ul>
-        <% @errors.each do |attr, message| %>
-          <li><%= "#{attr.capitalize} #{message[0]}" %></li>
-        <% end %>
-      </ul>
-  </div>
-<% end %>
+    <% if @errors %>
+      <div class="danger">
+          <ul>
+            <% @errors.each do |attr, message| %>
+              <li><%= "#{attr.capitalize} #{message[0]}" %></li>
+            <% end %>
+          </ul>
+      </div>
+    <% end %>
 
-<form action="/destinations" method="post">
-  <label for="city">City: </label>
-  <input type="text" name="city" id="city" placeholder="ex. Madrid"><br>
+    <form action="/destinations" method="post">
+      <label for="city">City: </label>
+      <input type="text" name="city" id="city" placeholder="ex. Madrid"><br>
 
-  <label for="country">Country: </label>
-  <input type="text" name="country" id="country" placeholder="ex. Spain"><br><br>
+      <label for="country">Country: </label>
+      <input type="text" name="country" id="country" placeholder="ex. Spain"><br><br>
 
-  <input type="submit" value="Add to Bucket">
-</form>
+      <input type="submit" value="Add to Bucket">
+    </form>
 
-<br>
+    <br>
 
-<a href="/users/<%= current_user.id %>" class="bttn">User Profile</a>
-<a href="/logout" class="bttn">Log Out</a>
+    <a href="/users/<%= current_user.id %>" class="bttn">User Profile</a>
+    <a href="/logout" class="bttn">Log Out</a>
+</div>

@@ -1,22 +1,24 @@
-<h2>Edit <%= current_user.username %>'s Profile
+<div class="logged-in">
+    <h2>Edit <%= current_user.username %>'s Profile
 
-<h4>Please fill out the following fields.</h4>
+    <h4>Please fill out the following fields.</h4>
 
 
-<form action="/users/<%= current_user.id %>" method="post">
-  <input type="hidden" id="hidden" name="_method" value="patch">
+    <form action="/users/<%= current_user.id %>" method="post">
+      <input type="hidden" id="hidden" name="_method" value="patch">
 
-  <label>Username: </label>
-  <input type="text" name="username" value="<%= current_user.username %>"><br>
+      <label>Username: </label>
+      <input type="text" name="username" value="<%= current_user.username %>"><br>
 
-  <label>Password: </label>
-  <input type="password" name="password" placeholder="New Password"><br>
+      <label>Password: </label>
+      <input type="password" name="password" placeholder="New Password"><br>
 
-  <label>Confirm Password: </label>
-  <input type="password_confirmation" name="password_confirmation" placeholder="Password Confirmation"><br><br>
+      <label>Confirm Password: </label>
+      <input type="password_confirmation" name="password_confirmation" placeholder="Password Confirmation"><br><br>
 
-  <input type="submit" value="Edit User">
-</form>
+      <input type="submit" value="Edit User">
+    </form>
 
-<br>
-<a href="/logout" class="bttn">Log Out</a>
+    <br>
+    <a href="/logout" class="bttn">Log Out</a>
+</div>

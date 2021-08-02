@@ -1,14 +1,17 @@
-<% if current_user.destinations.empty? %>
-  <h3>Hello <%= current_user.username %>! Your bucket is currently empty.</h3>
-    <p><a href="/destinations/new" class="normal">Add a destination</a></p>
-<% else %>
-  <h2><%= current_user.username %>'s Bucket List</h2>
-  <p class="emphasize"><%= current_user.dest_count %> DESTINATION(S):</p>
-  <p><a href="/destinations" class="normal">View destinations</a> <a href="/destinations/new" class="normal">Add a destination</a></p>
-<% end %>
+<div class="logged-in">
+    <% if current_user.destinations.empty? %>
+      <h3>Hello <%= current_user.username %>! Your bucket is currently empty.</h3>
+        <p><a href="/destinations/new" class="normal">Add a destination</a></p>
+    <% else %>
+      <h2><%= current_user.username.capitalize %>'s Bucket List</h2>
+      <p class="emphasize"><%= current_user.dest_count %> DESTINATION(S):</p>
+      <p><a href="/destinations" class="normal">View destinations</a> <a href="/destinations/new" class="normal">Add a destination</a></p>
+    <% end %>
 
-<div>
-  <a href="/users/<%= current_user.id %>/edit" class="bttn">Edit User</a>
-  <a href="/users/<%= current_user.id %>/delete" class="bttn">Delete User</a>
-  <a href="/logout" class="bttn">Log Out</a>
+    <div>
+      <a href="/users/<%= current_user.id %>/edit" class="bttn">Edit User</a>
+      <a href="/users/<%= current_user.id %>/delete" class="bttn">Delete User</a>
+      <a href="/logout" class="bttn">Log Out</a>
+    </div>
 </div>
+

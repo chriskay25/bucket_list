@@ -1,27 +1,29 @@
-<h1>Edit Destination</h2>
+ <div class="logged-in">
+    <h1>Edit Destination</h2>
 
-<h5>Please fill out both fields to edit destination.</h5>
-<form action="/destinations/<%= @dest.id %>" method="post">
-  <input type="hidden" id="hidden" name="_method" value="PATCH">
+    <h5>Please fill out both fields to edit destination.</h5>
+    <form action="/destinations/<%= @dest.id %>" method="post">
+      <input type="hidden" id="hidden" name="_method" value="PATCH">
 
-  <label for="city">City: </label>
-  <input type="text" name="city" id="city" value="<%= @dest.city %>"><br>
+      <label for="city">City: </label>
+      <input type="text" name="city" id="city" value="<%= @dest.city %>"><br>
 
-  <label for="country">Country: </label>
-  <input type="text" name="country" id="country" value="<%= @dest.country%>"><br>
+      <label for="country">Country: </label>
+      <input type="text" name="country" id="country" value="<%= @dest.country%>"><br>
 
-  <input type="submit" value="Edit Destination">
-</form>
+      <input type="submit" value="Edit Destination">
+    </form>
 
-<br>
+    <br>
 
-<h5>Would you like to delete this destination?</h5>
-<form action="/destinations/<%= @dest.id %>" method="post">
-  <input type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="Delete Destination?">
-</form>
+    <h5>Would you like to delete this destination?</h5>
+    <form action="/destinations/<%= @dest.id %>" method="post">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Delete Destination?">
+    </form>
 
-<br>
-<a href="/users/<% @user.id %>" class="bttn">User Profile</a>
-<a href="/destinations" class="bttn">User Destinations</a>
-<a href="/logout" class="bttn">Log Out</a>
+    <br>
+    <a href="/users/<% @user.id %>" class="bttn">User Profile</a>
+    <a href="/destinations" class="bttn">User Destinations</a>
+    <a href="/logout" class="bttn">Log Out</a>
+</div>
