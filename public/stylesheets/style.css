@@ -68,7 +68,7 @@ input {
 .not-logged-in {
     width: 100%;
     height: 100%;
-    background-image: url("./unsplash_pics/alexandre-chambon-unsplash.jpg");
+    background-image: url("../images/alexandre-chambon-unsplash.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 2rem;
