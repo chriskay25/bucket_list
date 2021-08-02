@@ -5,5 +5,4 @@ use Rack::MethodOverride
 use UsersController
 use SessionsController
 use DestinationsController
-use ExperiencesController
 run ApplicationController

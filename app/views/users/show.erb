@@ -1,13 +1,10 @@
-<% if current_user.destinations.empty? && current_user.experiences.empty? %>
-  <h3>Hello <%= current_user.username %>! Your bucket is currently empty. What would you like to do?</h3>
+<% if current_user.destinations.empty? %>
+  <h3>Hello <%= current_user.username %>! Your bucket is currently empty.</h3>
     <p><a href="/destinations/new" class="normal">Add a destination</a></p>
-    <p><a href="/experiences/new" class="normal">Add an experience</a></p>
 <% else %>
   <h2><%= current_user.username %>'s Bucket List</h2>
   <p class="emphasize"><%= current_user.dest_count %> DESTINATION(S):</p>
   <p><a href="/destinations" class="normal">View destinations</a> <a href="/destinations/new" class="normal">Add a destination</a></p>
-  <p class="emphasize"><%= current_user.exp_count %> EXPERIENCE(S):</p> 
-  <p><a href="/experiences" class="normal">View experiences</a> <a href="/experiences/new" class="normal">Add an experience</a></p> 
 <% end %>
 
 <div>

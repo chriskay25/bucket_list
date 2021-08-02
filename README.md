@@ -1,6 +1,6 @@
 # Bucket List Sinatra App
 
-This Sinatra-based web app allows users to create bucket lists and keep track of destinations they would like to visit and experiences they'd like to have before they die. 
+This Sinatra-based web app allows users to create bucket lists and keep track of destinations they would like to visit before they die. 
 
 ## Installation
 
@@ -22,7 +22,7 @@ And finally, in a browser go to http://localhost:9393 to get started and make an
 
 ## Usage
 
-Once users have signed up for an account, they can log in and will be taken to their profile page. From this page they can see how many items are in their bucket list, add items to it, or view lists of their destinations/experiences previously added. Users can also edit or delete their profile.
+Once users have signed up for an account, they can log in and will be taken to their profile page. From this page they can see how many items are in their bucket list, add items to it, or view lists of their destinations previously added. Users can also edit or delete their profile.
 
 ## Contributing
 
