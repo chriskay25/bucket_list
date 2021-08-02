@@ -1,14 +1,16 @@
-<h1>Login</h1>
+<div class='not-logged-in'>
+    <h1>Login</h1>
 
-<form action="/login" method="post">
-  <label for="username">Username: </label>
-  <input type="text" name="username" id="username" placeholder="username"><br>
-  <label for="password">Password: </label>
-  <input type="password" name="password" id="password" placeholder="password"><br>
-    <% if @failed %>
-      <p class="danger">Your username and/or password were incorrect. Please try again.</p>
-    <% end %>
-  <input type="submit" value="Login">
-</form>
+    <form action="/login" method="post" class="auth-form">
+      <label for="username">Username: </label>
+      <input type="text" name="username" id="username" placeholder="username"><br>
+      <label for="password">Password: </label>
+      <input type="password" name="password" id="password" placeholder="password"><br>
+        <% if @failed %>
+          <p class="danger">Your username and/or password were incorrect. Please try again.</p>
+        <% end %>
+      <input type="submit" value="Submit">
+    </form>
 
-<p>Don't have an account? <a href="/signup" class="footer">Sign up</a> here.</p>
+    <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+</div>
