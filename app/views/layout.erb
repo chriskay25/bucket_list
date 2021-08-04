@@ -14,10 +14,15 @@
 <body>
 
   <div class="container">
-    <div class="app-title">
+    <header class="app-title">
         <h1>Bucket List</h1>
-    </div>
-    <%= yield %>
+        <% if logged_in? %>
+            <%= erb :"shared/_menu", locals: { current_user: current_user } %>
+        <% end %>
+    </header>
+    <main>
+        <%= yield %>
+    </main>
   </div>
 
 </body>
