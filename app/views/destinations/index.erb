@@ -1,22 +1,17 @@
 <div class="logged-in">
-    <h1>Destination Index</h1>
+    <h1>List</h1>
 
     <% if !@destinations.empty? %>
-      <% @destinations.each do |dest| %>
-        <li>
-          <a href="/destinations/<%= dest.id %>" class="list">
-            <%= dest.city.upcase %>, <%= dest.country.upcase %>
-          </a> - 
-          <a href="/destinations/<%= dest.id %>/edit" class="normal">Edit or Delete</a>
-        </li>
-      <% end %>
+      <ul>
+        <% @destinations.each do |dest| %>
+          <li>
+            <a href="/destinations/<%= dest.id %>" class="list">
+              <%= dest.city.upcase %>, <%= dest.country.upcase %>
+            </a>
+          </li>
+        <% end %>
+      </ul>
     <% else %>
       <p>You haven't added any destinations yet. If you would like to, please click on the "New Destination" link below.</p>
     <% end %>
-
-    <br>
-
-    <a href="/users/<%= current_user.id %>" class="bttn">User Profile</a>
-    <a href="/destinations/new" class="bttn">New Destination</a>
-    <a href="/logout" class="bttn">Log Out</a>
 </div>
