@@ -19,7 +19,7 @@ gem "sqlite3", "~> 1.4"
 gem "thin", "~> 1.7"
 
 group :development do 
-  gem "better_errors", "~> 2.7"
+  gem "better_errors", "~> 2.8"
   gem "binding_of_caller", "~> 0.8.0"
   gem "tux", "~> 0.3.0"
   gem "pry", "~> 0.13.1"
