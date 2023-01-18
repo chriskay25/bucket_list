@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 gem "bcrypt", "~> 3.1"
 
-gem "activerecord", "~> 6.0"
+gem "activerecord", "~> 6.1"
 
 gem "require_all", "~> 3.0"
 
